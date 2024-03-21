@@ -1,5 +1,14 @@
 # test-waizly
 
+## Todo Apps
+```
+Basic Usage :
+ - Add task
+ - Edit task
+ - Delete task
+ - Mark task
+```
+
 ## Project setup
 ```
 npm install
