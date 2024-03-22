@@ -2,11 +2,17 @@
 
 ## Todo Apps
 ```
-Basic Usage :
- - Add task
- - Edit task
- - Delete task
- - Mark task
+Feature :
+ - Add todo
+ - Edit todo
+ - Delete todo
+ - Mark done todo 
+```
+
+```
+Show Real Time and Date Time from API
+
+source `https://github.com/mininxd/timeapi/`
 ```
 
 ## Project setup
