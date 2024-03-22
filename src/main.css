@@ -1,5 +1,5 @@
 :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
@@ -9,6 +9,7 @@
   --dark: #313154;
   --danger: #f44c49e8;
   --shadow: 0 1px 3px rgba(207, 39, 39, 0.1);
+  --box: rgb(105, 105, 105);
 }
 
 body {
@@ -26,6 +27,9 @@ body {
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 * {

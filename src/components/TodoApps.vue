@@ -1,5 +1,5 @@
 <template>
-  <main class="app">
+  <main class="todo-apps">
     <section class="greeting">
       <h3 class="title">✍️ ToDo App With Vue</h3>
     </section>
@@ -89,6 +89,9 @@
 </script>
 
 <style>
+  .todo-apps {
+    min-width: 800px;
+  }
   input:not([type="radio"]):not([type="checkbox"]),
   button {
     border: none;
@@ -237,6 +240,7 @@
   .todo-item .todo-content input {
     color: white;
     font-size: 1.125rem;
+    width: 100%;
   }
 
   .todo-item .actions {
