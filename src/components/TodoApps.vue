@@ -87,9 +87,3 @@
     todos.value = JSON.parse(localStorage.getItem("todos")) || [];
   });
 </script>
-
-<script>
-  export default {
-    name: "TodoApps",
-  }
-</script>

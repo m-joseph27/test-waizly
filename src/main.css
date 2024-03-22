@@ -3,15 +3,12 @@
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
-  color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
   --primary: #3ca7bf;
-  --light: #1A1A1A;
   --grey: #888;
   --dark: #313154;
-  --danger: #ff5b57;
-  --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --danger: #f44c49e8;
+  --shadow: 0 1px 3px rgba(207, 39, 39, 0.1);
 }
 
 body {
@@ -20,6 +17,9 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: #f6ddb7;
+  opacity: 1;
+  background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #f6ddb7 10px ), repeating-linear-gradient( #f1816a55, #f1816a );
 }
 
 #app {
@@ -43,10 +43,6 @@ button {
   cursor: initial;
 }
 
-body {
-  background: var(--light);
-}
-
 section {
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -59,6 +55,7 @@ h3 {
   font-size: 1rem;
   font-weight: 400;
   margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 h4 {
@@ -70,6 +67,7 @@ h4 {
 
 .greeting .title {
   display: flex;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .greeting .title input {
@@ -150,6 +148,7 @@ input:checked ~ .bubble::after {
   box-shadow: var(--personal-glow);
   cursor: pointer;
   transition: 0.2s ease-in-out;
+  background-color: #f1816a;
 }
 
 .create-todo input[type="submit"]:hover {
@@ -158,12 +157,13 @@ input:checked ~ .bubble::after {
 
 .todo-list .list {
   margin: 1rem 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .todo-list .todo-item {
   display: flex;
   align-items: center;
-  background-color: #3a3a3a6f;
+  background-color: #b758216f;
   padding: 1rem;
   border-radius: 0.5rem;
   box-shadow: var(--shadow);
@@ -214,12 +214,13 @@ input:checked ~ .bubble::after {
 
 .todo-item.done .todo-content input {
   text-decoration: line-through;
-  color: rgba(165, 165, 165, 0.752);
+  color: rgba(48, 47, 47, 0.681);
 }
 
 .input-section,
 .todo-section {
-  border: 1px solid rgb(47, 47, 47);
+  border: 1px solid rgb(243, 243, 243);
   border-radius: 10px;
   margin-top: 30px;
 }
+
