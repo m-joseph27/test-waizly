@@ -6,7 +6,7 @@
   >
     <div class="time-zone">Waktu Indonesia Barat</div>
     <div class="current-time">{{ currentTime }}</div>
-    <div class="date-time">{{ `${time.weekday}, ${formatedTime(time.date, "dd MMMM yyyy")}` }}</div>
+    <div class="date-time">{{ `${time.weekday}, ${formatedTime(time.date, "dd MMMM yyyy")}, ${time.timezone}` }}</div>
     <div class="greeting">
       Have a Good Day 😊
     </div>
@@ -72,6 +72,7 @@
     align-items: start;
     padding: 20px 30px;
     color: rgb(51, 51, 51);
+    margin-bottom: 20px;
   }
 
   .time-zone {
