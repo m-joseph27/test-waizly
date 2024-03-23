@@ -21,7 +21,16 @@
 
     <div class="todo-section">
       <section class="todo-list">
-        <h2 v-show="todos.length === 0">No Todos today 😞</h2>
+        <div class="input-section">
+          <input
+            type="text"
+            placeholder="Search todos"
+            v-model="searchTerm"
+            @input="filterTodos"
+            class="search-bar"
+          />
+        </div>
+        <h2 v-show="todos.length === 0" class="not-found">No Todos today 😞</h2>
 
         <div class="list">
           <div
@@ -57,6 +66,8 @@
 
   const todos = ref([]);
   const text = ref("");
+  const searchTerm = ref("");
+  const originalTodos = ref([]);
 
   function addTodo() {
     if (text.value.trim() === "") {
@@ -69,10 +80,12 @@
     });
 
     text.value = "";
+    updateOriginalTodos();
   }
 
   function deleteTodo(todo) {
     todos.value = todos.value.filter((x) => x !== todo);
+    updateOriginalTodos();
   }
 
   function showConfirmation(todo) {
@@ -88,6 +101,22 @@
         deleteTodo(todo);
       }
     });
+  }
+
+  function filterTodos() {
+    const searchLower = searchTerm.value.trim().toLowerCase();
+    if (searchLower === "") {
+      todos.value = [...originalTodos.value];
+      return;
+    }
+
+    todos.value = originalTodos.value.filter(todo =>
+      todo.todo.toLowerCase().includes(searchLower)
+    );
+  }
+
+  function updateOriginalTodos() {
+    originalTodos.value = [...todos.value];
   }
 
   watch(
@@ -295,5 +324,23 @@
     border: 1px solid rgb(243, 243, 243);
     border-radius: 10px;
     margin-top: 30px;
+  }
+
+  .search-bar {
+    display: block;
+    width: 100%;
+    font-size: 1.125rem;
+    padding: 1rem 1.5rem;
+    background-color: green;
+    border-radius: 0.5rem;
+    box-shadow: var(--personal-glow);
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    background-color: white !important;
+  }
+
+  .not-found {
+    margin-top: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   }
 </style>
