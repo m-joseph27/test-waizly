@@ -38,7 +38,7 @@
             </div>
 
             <div class="actions">
-              <button class="delete" @click="deleteTodo(todo)">
+              <button class="delete" @click="showConfirmation(todo)">
                 <div>
                   <fa icon="trash" />
                 </div>
@@ -53,7 +53,7 @@
 
 <script setup>
   import { ref, onMounted, watch } from "vue";
-
+  import PopUp from "../common/PopUp.js";
 
   const todos = ref([]);
   const text = ref("");
@@ -73,6 +73,21 @@
 
   function deleteTodo(todo) {
     todos.value = todos.value.filter((x) => x !== todo);
+  }
+
+  function showConfirmation(todo) {
+    PopUp.confirm(
+      'Are you sure?',
+      'todo will be lost forever',
+      'Sure',
+      'No'
+    )
+    .then((result) => {
+      if (result.isConfirmed) {
+        PopUp.success('Todo delete successfully');
+        deleteTodo(todo);
+      }
+    });
   }
 
   watch(

@@ -44,7 +44,6 @@
         try {
           const data = await fetchData('');
           times.value = data.wib;
-          console.log('Data from API:', times.value);
         } catch (error) {
           console.log(error);
         }
