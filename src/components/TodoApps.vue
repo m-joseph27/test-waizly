@@ -48,9 +48,7 @@
 
             <div class="actions">
               <button class="delete" @click="showConfirmation(todo)">
-                <div>
-                  <fa icon="trash" />
-                </div>
+                Delete
               </button>
             </div>
           </div>
